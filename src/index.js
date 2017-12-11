@@ -9,32 +9,31 @@ var showdown  = require('showdown'),
 converter.setOption('tables', true);
 
 
-const head = `<!Doctype html>
+const template = `
+<!Doctype html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-<title>GitHub Markdown CSS demo</title>
-
-<style>
-			body {
-				box-sizing: border-box;
-				min-width: 200px;
-				max-width: 980px;
-				margin: 0 auto;
-				padding: 45px;
-			}
-		</style>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>MarkDown</title>
+    <link rel="stylesheet" href="<%=css%>">
+    <style>
+	 body {
+	   box-sizing: border-box;
+	   min-width: 200px;
+	   max-width: 980px;
+	   margin: 0 auto;
+	   padding: 45px;
+	 }
+	</style>
+  </head>
 </body>
 <article class="markdown-body">
-`;
-
-const foot = `
+  <%-body%>
 </article>
 </body>
-</html>
-`;
+</html>`;
+
 
 let readFile = function(path) {
     return new Promise((res, rej) => {
@@ -61,7 +60,7 @@ let static_markdown = function( option ) {
             let buffer = await readFile(file); 
             let body = converter.makeHtml(buffer.toString());
 
-            ctx.body = ejs.render('./template.html',{css:option.css, body:body});
+            ctx.body = ejs.render(template,{css:option.css, body:body});
         }
         await next();
     };

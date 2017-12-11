@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/xuxiaoyu2010/koa-static-markdown/issues"
   },
-  "homepage": "https://github.com/xuxiaoyu2010/koa-static-markdown#readme"
+  "homepage": "https://github.com/xuxiaoyu2010/koa-static-markdown#readme",
+  "dependencies": {
+    "ejs": "^2.5.7"
+  }
 }
