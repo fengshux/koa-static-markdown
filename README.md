@@ -1,7 +1,7 @@
 # koa-static-markdown
 [![NPM version][npm-image]][npm-url]
 
-An static resource server in koa, which transform markdown file to html.
+An static resource server in koa, which transform markdown file to html. It let you get html file directly when you visit the markdown file in the static directory you specified in config.
 
 ## Installation
 
