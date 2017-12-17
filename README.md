@@ -26,12 +26,6 @@ app.listen(3000);
 ```
 
 
-```
-$ npm test
-```
-
-
-
 
 # License
 
