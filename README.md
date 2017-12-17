@@ -1,4 +1,5 @@
 # koa-static-markdown
+[![NPM version][npm-image]][npm-url]
 
 An static resource server in koa, which transform markdown file to html.
 
@@ -35,3 +36,6 @@ $ npm test
 # License
 
   MIT
+
+[npm-image]: https://img.shields.io/npm/v/koa-static-markdown.svg?style=flat
+[npm-url]: https://www.npmjs.com/package/koa-static-markdown
